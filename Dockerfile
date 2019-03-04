@@ -24,6 +24,10 @@ EXPOSE 8000
 # Export HTTP port
 EXPOSE 9000
 
+# Check server health
+HEALTHCHECK --interval=30s --timeout=3s --retries=3 \
+            CMD curl --fail http://localhost:9000/ || exit 1
+
 # Execute development server
 ENTRYPOINT ["play"]
 CMD ["run", "app"]
