@@ -1,8 +1,7 @@
 FROM bash:5.0 as builder
 
 # Download Play 1.5
-#ADD https://downloads.typesafe.com/play/1.5.2/play-1.5.2.zip /home
-COPY ./play-1.5.2.zip /home
+ADD https://downloads.typesafe.com/play/1.5.2/play-1.5.2.zip /home
 
 # Unpack Play
 RUN unzip -q /home/play-1.5.2.zip -d /home
