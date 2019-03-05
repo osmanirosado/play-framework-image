@@ -6,6 +6,9 @@ ADD https://downloads.typesafe.com/play/1.5.2/play-1.5.2.zip /home
 # Unpack Play
 RUN unzip -q /home/play-1.5.2.zip -d /home
 
+# Grant execute permits on files in /home/play-1.5.2 directory
+RUN chmod -R +x /home/play-1.5.2
+
 FROM store/oracle/serverjre:8
 
 # Install Play
