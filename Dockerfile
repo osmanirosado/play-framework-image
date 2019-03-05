@@ -20,14 +20,14 @@ RUN mkdir /home/play
 WORKDIR /home/play
 
 # Create Example app
-RUN echo Example | play new app
+RUN echo Example | play new webapp
 
 # Export Socket port
 EXPOSE 8000
 # Export HTTP port
 EXPOSE 9000
 
-VOLUME [ "/home/play/app" ]
+VOLUME [ "/home/play/webapp" ]
 
 # Check server health
 HEALTHCHECK --interval=30s --timeout=3s --retries=3 \
@@ -35,4 +35,4 @@ HEALTHCHECK --interval=30s --timeout=3s --retries=3 \
 
 # Execute development server
 ENTRYPOINT ["play"]
-CMD ["run", "app"]
+CMD ["run", "webapp"]
