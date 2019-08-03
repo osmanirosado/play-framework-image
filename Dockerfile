@@ -31,5 +31,4 @@ HEALTHCHECK --interval=30s --timeout=3s --retries=3 \
             CMD curl --fail http://localhost:9000/ || exit 1
 
 # Execute development server
-ENTRYPOINT ["play"]
-CMD ["run", "app"]
+CMD ["play", "run", "app"]
